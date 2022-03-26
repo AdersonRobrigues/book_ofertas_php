@@ -298,10 +298,6 @@
                         <label for="exampleInputPreco">Editado em:</label>
                         <input type="datetime-local" class="form-control" name="updated_at" id="exampleInputPreco" placeholder="Selecione">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Preço</label>
-                        <input type="number" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
                     <div class="modal-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                             <div class="btn-group" role="group">
