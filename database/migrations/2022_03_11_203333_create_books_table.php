@@ -15,7 +15,13 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-
+            $table->string('operador');
+            $table->string('tp_energia');
+            $table->string('inicio');
+            $table->string('fim');
+            $table->decimal('volume',9,6);
+            $table->decimal('preco',7,2);
+            $table->string('submercado');
             $table->timestamps();
         });
     }
