@@ -29,9 +29,29 @@ class BookController extends Controller
         $book->created_at = $request->created_at;
         $book->updated_at = $request->updated_at;
 
-
         $book->save();
-
         return redirect('layouts/main');
+    }
+
+    public function storeC(Request $request)
+    {
+        $bookC = new Book();
+
+        $bookC->operador = $request->operador;
+        $bookC->tp_energia = $request->tp_energia;
+        $bookC->inicio = $request->inicio;
+        $bookC->fim = $request->fim;
+        $bookC->volume = $request->volume;
+        $bookC->preco= $request->preco;
+        $bookC->submercado= $request->submercado;
+        $bookC->created_at = $request->created_at;
+        $bookC->updated_at = $request->updated_at;
+
+        $bookC->save();
+        return redirect('layouts/main');
+    }
+
+    public function delete(Book  $book){
+        $book->delete();
     }
 }

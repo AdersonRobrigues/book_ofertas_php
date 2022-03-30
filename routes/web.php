@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Route::get('/layouts/main', [BookController::class, 'homeView']);
 Route::post('/layouts/main', [BookController::class, 'store']);
+//Route::post('/layouts/main', [BookController::class, 'storeC']);
+Route::post('/layouts/main/delete', [BookController::class, 'delete']);
 
 
 
