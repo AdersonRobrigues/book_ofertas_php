@@ -538,10 +538,7 @@
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             <span class="fs-it-btn-vertical-line"></span>
                                             Editar</button>
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            <span class="fs-it-btn-vertical-line"></span>
-                                            Deletar</button>
+
                                     </div>
                                 </div>
                             </td>
