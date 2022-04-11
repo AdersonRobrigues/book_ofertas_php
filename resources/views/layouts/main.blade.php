@@ -110,7 +110,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="squarespaceModalV" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="squarespaceModalV" name="modalV" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,7 +119,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="/layouts/main/" method="POST">
+                <form action="#sailorTableAreaV" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -419,7 +419,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($books as $book)
+                    @foreach($book_v_s as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
