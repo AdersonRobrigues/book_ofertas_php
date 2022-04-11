@@ -110,7 +110,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="squarespaceModalV" name="modalV" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="squarespaceModalV"  tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,7 +119,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="#sailorTableAreaV" method="POST">
+                <form action="/layouts/main/" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -371,17 +371,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($books as $bookC)
+                    @foreach($books as $book)
                         <tr>
-                            <td>{{ $bookC->operador }}</td>
-                            <td>{{ $bookC->tp_energia }}</td>
-                            <td>{{ $bookC->inicio }}</td>
-                            <td>{{ $bookC->fim }}</td>
-                            <td>{{ $bookC->volume }}</td>
-                            <td>{{ $bookC->preco }}</td>
-                            <td>{{ $bookC->submercado }}</td>
-                            <td>{{ $bookC->created_at }}</td>
-                            <td>{{ $bookC->updated_at }}</td>
+                            <td>{{ $book->operador }}</td>
+                            <td>{{ $book->tp_energia }}</td>
+                            <td>{{ $book->inicio }}</td>
+                            <td>{{ $book->fim }}</td>
+                            <td>{{ $book->volume }}</td>
+                            <td>{{ $book->preco }}</td>
+                            <td>{{ $book->submercado }}</td>
+                            <td>{{ $book->created_at }}</td>
+                            <td>{{ $book->updated_at }}</td>
                             <td> <div class="container-fluid text-center">
                                     <div class="row grid-divider">
                                         <button type="button" class="btn btn-warning btn-sm">
@@ -403,7 +403,6 @@
         <div class="col-sm-6">
             <div class="table-responsive" id="sailorTableAreaV">
                 <table id="sailorTable" class="table table-striped table-bordered" width="100%">
-
                     <thead>
                     <tr>
                         <th>Operador</th>
@@ -419,7 +418,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($book_v_s as $book)
+                    @foreach($books as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
@@ -438,7 +437,8 @@
 
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar</button>
+                                            Deletar
+                                        </button>
                                     </div>
                                 </div></td>
                         </tr>
@@ -489,11 +489,13 @@
                                     <div class="row grid-divider">
                                         <button type="button" class="btn btn-warning btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
-                                           Editar</button>
+                                           Editar
+                                        </button>
 
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar</button>
+                                            Deletar
+                                        </button>
                                     </div>
                                 </div>
                             </td>
@@ -537,7 +539,12 @@
                                         <button type="button" class="btn btn-warning btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             <span class="fs-it-btn-vertical-line"></span>
-                                            Editar</button>
+                                            Editar
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                            Deletar
+                                        </button>
 
                                     </div>
                                 </div>
