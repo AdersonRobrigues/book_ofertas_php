@@ -182,7 +182,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="{{route('layouts.modalCmercado.store')}}" method="POST">
+                <form action="{{route('layouts.main.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
