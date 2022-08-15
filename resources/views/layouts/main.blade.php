@@ -13,7 +13,6 @@
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
@@ -29,6 +28,7 @@
         </div>
     </nav>
 </header>
+
 <!-- line modal -->
 
 <div class="modal fade" id="squarespaceModalC" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -40,7 +40,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="/layouts/main/" method="POST">
+                <form action="{{route('layouts.main.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -56,7 +56,6 @@
                             <option value="CQ5">CQ5</option>
                             <option value="CQ1">CQ1</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputInicio">Inicio</label>
@@ -72,7 +71,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPreco">Preço</label>
-                        <input type="number" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
+                        <input type="decimal" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSub">Submercado</label>
@@ -83,14 +82,7 @@
                             <option value="NO" >NO</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Criado em:</label>
-                        <input type="datetime-local" class="form-control" name="created_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Editado em:</label>
-                        <input type="datetime-local" class="form-control" name="updated_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
+                    <div><input type="hidden" class="form-control" name="tipoForm" value="formC" id="exampleInputInicio"></div>
                     <div class="modal-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                             <div class="btn-group" role="group">
@@ -114,12 +106,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="lineModalLabel">Compras</h3>
+                <h3 class="modal-title" id="lineModalLabel">Vendas</h3>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="/layouts/main/" method="POST">
+                <form action="{{ route('layouts.main.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -135,7 +127,6 @@
                             <option value="CQ5">CQ5</option>
                             <option value="CQ1">CQ1</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputInicio">Inicio</label>
@@ -151,7 +142,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPreco">Preço</label>
-                        <input type="number" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
+                        <input type="decimal" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSub">Submercado</label>
@@ -162,14 +153,7 @@
                             <option value="NO" >NO</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Criado em:</label>
-                        <input type="datetime-local" class="form-control" name="created_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Editado em:</label>
-                        <input type="datetime-local" class="form-control" name="updated_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
+                    <div><input type="hidden" class="form-control" name="tipoFormV" value="formV" id="exampleInputInicio"></div>
                     <div class="modal-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                             <div class="btn-group" role="group">
@@ -189,7 +173,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="squarespaceModalCM" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="squarespaceModalCM"  tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -198,7 +182,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="/layouts/main/" method="POST">
+                <form action="{{route('layouts.modalCmercado.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -214,7 +198,6 @@
                             <option value="CQ5">CQ5</option>
                             <option value="CQ1">CQ1</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputInicio">Inicio</label>
@@ -230,7 +213,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPreco">Preço</label>
-                        <input type="number" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
+                        <input type="decimal" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSub">Submercado</label>
@@ -241,14 +224,7 @@
                             <option value="NO" >NO</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Criado em:</label>
-                        <input type="datetime-local" class="form-control" name="created_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Editado em:</label>
-                        <input type="datetime-local" class="form-control" name="updated_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
+                    <div><input type="hidden" class="form-control" name="tipoFormCM" value="formCM" id="exampleInputInicio"></div>
                     <div class="modal-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                             <div class="btn-group" role="group">
@@ -272,12 +248,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="lineModalLabel">Compras</h3>
+                <h3 class="modal-title" id="lineModalLabel">Vendas Mercado</h3>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="/layouts/main/" method="POST">
+                <form action="{{route('layouts.modalVmercado.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -293,7 +269,6 @@
                             <option value="CQ5">CQ5</option>
                             <option value="CQ1">CQ1</option>
                         </select>
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputInicio">Inicio</label>
@@ -309,7 +284,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPreco">Preço</label>
-                        <input type="number" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
+                        <input type="decimal" class="form-control" name="preco" id="exampleInputPreco" placeholder="Selecione">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSub">Submercado</label>
@@ -320,14 +295,7 @@
                             <option value="NO" >NO</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Criado em:</label>
-                        <input type="datetime-local" class="form-control" name="created_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPreco">Editado em:</label>
-                        <input type="datetime-local" class="form-control" name="updated_at" id="exampleInputPreco" placeholder="Selecione">
-                    </div>
+                    <div><input type="hidden" class="form-control" name="tipoFormVm" value="formVM" id="exampleInputInicio"></div>
                     <div class="modal-footer">
                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                             <div class="btn-group" role="group">
@@ -384,13 +352,14 @@
                             <td>{{ $book->updated_at }}</td>
                             <td> <div class="container-fluid text-center">
                                     <div class="row grid-divider">
-                                        <button type="button" class="btn btn-warning btn-sm">
+                                        <button type="button" class="btn btn-info btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             Editar</button>
 
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar</button>
+                                            Deletar
+                                        </button>
                                     </div>
                                 </div>
                             </td>
@@ -431,7 +400,7 @@
                             <td>{{ $book->updated_at }}</td>
                             <td> <div class="container-fluid text-center">
                                     <div class="row grid-divider">
-                                        <button type="button" class="btn btn-warning btn-sm">
+                                        <button type="button" class="btn btn-info btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             Editar</button>
 
@@ -440,7 +409,8 @@
                                             Deletar
                                         </button>
                                     </div>
-                                </div></td>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -458,7 +428,6 @@
         <div class="col-sm-6">
             <div class="table-responsive" id="sailorTableAreaCM">
                 <table id="sailorTable" class="table table-striped table-bordered" width="100%">
-
                     <thead>
                     <tr>
                         <th>Operador</th>
@@ -487,7 +456,7 @@
                             <td>{{ $book->updated_at }}</td>
                             <td> <div class="container-fluid text-center">
                                     <div class="row grid-divider">
-                                        <button type="button" class="btn btn-warning btn-sm">
+                                        <button type="button" class="btn btn-info btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                            Editar
                                         </button>
@@ -523,7 +492,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($books as $book)
+                    @foreach($bookV as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
@@ -536,7 +505,7 @@
                             <td>{{ $book->updated_at }}</td>
                             <td> <div class="container-fluid text-center">
                                     <div class="row">
-                                        <button type="button" class="btn btn-warning btn-sm">
+                                        <button type="button" class="btn btn-info btn-sm">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             <span class="fs-it-btn-vertical-line"></span>
                                             Editar
@@ -545,7 +514,6 @@
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             Deletar
                                         </button>
-
                                     </div>
                                 </div>
                             </td>
