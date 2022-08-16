@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\BookV;
+use App\Models\BookCm;
+use App\Models\BookVm;
 
 
 class BookController extends Controller
@@ -14,8 +16,11 @@ class BookController extends Controller
     {
         $lists = Book::all();
         $listsV = BookV::all();
+        $listsCm = BookCm::all();
+        $listsVm = BookVm::all();
+        
        
-        return view('layouts.main',['books'=>$lists,'bookV'=>$listsV]);
+        return view('layouts.main',['books'=>$lists,'bookV'=>$listsV,'bookCm'=>$listsCm,'bookVm'=>$listsVm]);
     }
 
     public function store(Request $request)
