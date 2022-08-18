@@ -35,7 +35,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="lineModalLabel">Compras</h3>
+                <h3 class="modal-title" id="lineModalLabel">Compras Mérito</h3>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
@@ -106,12 +106,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="lineModalLabel">Vendas</h3>
+                <h3 class="modal-title" id="lineModalLabel">Vendas Mérito</h3>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="{{ route('layouts.main.store') }}" method="POST">
+                <form action="{{ route('layouts.modalVenda.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -177,12 +177,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="lineModalLabel">Compras</h3>
+                <h3 class="modal-title" id="lineModalLabel">Compras Mercado</h3>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="{{route('layouts.main.store')}}" method="POST">
+                <form action="{{route('layouts.modalCmercado.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -387,7 +387,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($books as $book)
+                    @foreach($bookV as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
@@ -443,7 +443,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($books as $book)
+                    @foreach($bookCm as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
@@ -492,7 +492,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($bookV as $book)
+                    @foreach($bookVm as $book)
                         <tr>
                             <td>{{ $book->operador }}</td>
                             <td>{{ $book->tp_energia }}</td>
