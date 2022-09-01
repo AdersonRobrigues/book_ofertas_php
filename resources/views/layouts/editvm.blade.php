@@ -9,7 +9,7 @@
 <body>
 
     <!-- content goes here -->
-    <form action="/layouts/update/{{$offer->id}}" method="POST" class="container">
+    <form action="/layouts/updateVm/{{$offer->id}}" method="POST" class="container">
         @csrf
         @method("PUT")
         <div class="form-group">
@@ -56,7 +56,7 @@
         <div class="modal-footer">
             <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-info btn-close" data-dismiss=""  role="button">Close</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal"  role="button">Close</button>
                 </div>
                 <div class="btn-group" role="group">
                     <input type="submit" id="saveImage" class="btn btn-warning" value="Editar">

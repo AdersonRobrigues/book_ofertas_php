@@ -15,4 +15,24 @@ class BookVMController extends Controller
             return redirect()->route('layouts.main.store');
         }
     }
+
+    public function editar($id)
+    {
+        $offers = BookVm::findOrFail($id);
+
+       // dd($offers->operador);
+        return view('layouts.editvm',['offer'=>$offers]);
+    }
+
+    public function update(Request $request)
+    {
+        BookVm::findOrFail($request->id)->update($request-> all());
+        return redirect('/layouts/main/');
+    }
+
+    public function destroy($id)
+    {
+        BookVm::findorFail($id)->delete();
+        return redirect()->route('layouts.main.store')->with('success','Registro deletado com sucesso!');
+    }
 }

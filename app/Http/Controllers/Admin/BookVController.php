@@ -16,4 +16,25 @@ class BookVController extends Controller
         }
     }
 
+    public function editar($id)
+    {
+        $offers = BookV::findOrFail($id);
+
+       // dd($offers->operador);
+        return view('layouts.editv',['offer'=>$offers]);
+    }
+
+    public function update(Request $request)
+    {
+        BookV::findOrFail($request->id)->update($request-> all());
+        return redirect('/layouts/main/');
+    }
+
+    public function destroy($id)
+    {
+        BookV::findorFail($id)->delete();
+        return redirect()->route('layouts.main.store')->with('success','Registro deletado com sucesso!');
+    }
 }
+
+

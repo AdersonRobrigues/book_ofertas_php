@@ -36,7 +36,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="lineModalLabel">Compras Mérito</h3>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
@@ -111,7 +111,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="{{ route('layouts.modalVenda.store') }}" method="POST">
+                <form action="{{ route('layouts.modalV.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -253,7 +253,7 @@
             </div>
             <div class="modal-body">
                 <!-- content goes here -->
-                <form action="{{route('layouts.modalVmercado.store')}}" method="POST">
+                <form action="{{route('layouts.modalVenda.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputOperador">Operador</label>
@@ -350,18 +350,13 @@
                             <td>{{ $book->submercado }}</td>
                             <td>{{ $book->created_at }}</td>
                             <td>{{ $book->updated_at }}</td>
-                            <td> <div class="container-fluid text-center">
-                                    <div class="row grid-divider">
-                                        <button type="button" class="btn btn-info btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Editar</button>
-
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar
-                                        </button>
-                                    </div>
-                                </div>
+                            <td>
+                             <form action="/layouts/main/{{$book->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                <a href="/layouts/edit/{{$book->id}}"class="btn btn-warning btn-edit btn-sm">Editar</a>
+                              </form>
                             </td>
                         </tr>
                     @endforeach
@@ -398,18 +393,13 @@
                             <td>{{ $book->submercado }}</td>
                             <td>{{ $book->created_at }}</td>
                             <td>{{ $book->updated_at }}</td>
-                            <td> <div class="container-fluid text-center">
-                                    <div class="row grid-divider">
-                                        <button type="button" class="btn btn-info btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Editar</button>
-
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar
-                                        </button>
-                                    </div>
-                                </div>
+                            <td>
+                             <form action="/layouts/modalvenda/{{$book->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                <a href="/layouts/editV/{{$book->id}}"class="btn btn-warning btn-edit btn-sm">Editar</a>
+                              </form>
                             </td>
                         </tr>
                     @endforeach
@@ -454,19 +444,13 @@
                             <td>{{ $book->submercado }}</td>
                             <td>{{ $book->created_at }}</td>
                             <td>{{ $book->updated_at }}</td>
-                            <td> <div class="container-fluid text-center">
-                                    <div class="row grid-divider">
-                                        <button type="button" class="btn btn-info btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                           Editar
-                                        </button>
-
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar
-                                        </button>
-                                    </div>
-                                </div>
+                            <td>
+                             <form action="/layouts/modalcompramercado/{{$book->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                <a href="/layouts/editCM/{{$book->id}}"class="btn btn-warning btn-edit btn-sm">Editar</a>
+                              </form>
                             </td>
                         </tr>
                     @endforeach
@@ -503,19 +487,13 @@
                             <td>{{ $book->submercado }}</td>
                             <td>{{ $book->created_at }}</td>
                             <td>{{ $book->updated_at }}</td>
-                            <td> <div class="container-fluid text-center">
-                                    <div class="row">
-                                        <button type="button" class="btn btn-info btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            <span class="fs-it-btn-vertical-line"></span>
-                                            Editar
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            Deletar
-                                        </button>
-                                    </div>
-                                </div>
+                            <td>
+                              <form action="/layouts/modalvendamercado/{{$book->id}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                <a href="/layouts/editVm/{{$book->id}}"class="btn btn-warning btn-edit btn-sm">Editar</a>
+                              </form>
                             </td>
                         </tr>
                     @endforeach
